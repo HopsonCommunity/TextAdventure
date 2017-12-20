@@ -28,14 +28,22 @@ Theme : Wild west
 
 ### Level Editor
 
+- Tkinker
+- Gtk+
+- kivy
+- Web app ?
+
+Select a folder for all assets (music, background, ...)
+Use placeholder, instead of referring the path, to make future change easier
+
 
 ### Story Engine
 
-[ ] Data storage
-[ ] Interpreting story files
-[ ] Inventory
-[ ] Player stats
-[ ] Room transitions
+- [ ] Data storage
+- [ ] Interpreting story files
+- [ ] Inventory
+- [ ] Player stats
+- [ ] Room transitions
 
 #### Data
 
@@ -57,12 +65,20 @@ Theme : Wild west
 
 #### Ressources
 
-http://games.gameshed.com/westerando_big.jpg
-https://www.python.org/dev/peps/pep-0008/
-https://opengameart.org/content/cowboy-with-rifle
-https://opengameart.org/content/cowboy-with-revolver
-https://opengameart.org/content/cowboy
-https://gamejolt.com/games/fistful-of-gun/16749
-https://opengameart.org/content/cowboy-game-sprites
+- http://games.gameshed.com/westerando_big.jpg
+- https://www.python.org/dev/peps/pep-0008/
+- https://opengameart.org/content/cowboy-with-rifle
+- https://opengameart.org/content/cowboy-with-revolver
+- https://opengameart.org/content/cowboy
+- https://gamejolt.com/games/fistful-of-gun/16749
+- https://opengameart.org/content/cowboy-game-sprites
 
 ### Story
+
+- Load archives
+- Handle choices & transisiton of states
+
+### Stats
+
+- Soumy / leading
+- Methods for updating the personality. i.e. `stats["moral"] += 10` as `incr_moral(10)`
