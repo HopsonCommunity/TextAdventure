@@ -1,84 +1,43 @@
-# TextAdventure
-A text adventure made by a couple of members on the Hopson Community Server.
+# Text Community Game
 
-## Technologies
+Single player, text-based RPG in wild west.
 
-- Python 3.5+
-    - pyglet : cross-platform windows manager
-- [Github](https://github.com/HopsonCommunity/TextAdventure) 
-- [Trello](https://trello.com/b/hNnX2awR/hopson-communitys-text-game)
-- Github bugtracker
-- dropbox
+**Story Engine**
 
-## The Game
+## Trivia:
 
-Platform : PC
-Kind : Text adventure RPG - Singleplayer
-Style : Pixel Art
-Theme : Wild west
+* **Platform** - PC
+* **Language** - Python 3.5+
+* **Theme** - Wild West
+* **Visual Style** - Pixel Art
+* **Audio Style** - Chiptunes
 
-## Details
-
-### Programming
-
-[Style](https://www.python.org/dev/peps/pep-0008/)
-4 spaces
-2 new lines before functions
-[Git branching](http://nvie.com/posts/a-successful-git-branching-model/)
-
-### Level Editor
-
-- Tkinker
-- Gtk+
-- kivy
-- Web app ?
-
-Select a folder for all assets (music, background, ...)
-Use placeholder, instead of referring the path, to make future change easier
-
+## Parts:
 
 ### Story Engine
 
-- [ ] Data storage
-- [ ] Interpreting story files
-- [ ] Inventory
-- [ ] Player stats
-- [ ] Room transitions
-
-#### Data
-
-- Custom format for storing (.zip ?)
-- Entry file for each story
-- Story define as json file
-- Walk all the file and parse them in a dictionary `room_name -> info`
+* [Git Repository](https://github.com/HopsonCommunity/TextAdventure)
+* [Agile Board](https://trello.com/b/hNnX2awR/hopson-communitys-text-game)
+* [Issue Tracker](https://github.com/HopsonCommunity/TextAdventure/issues)
 
 ### Graphics Engine
 
-- Graphical library : Pyglet
+* [Git Repository](https://github.com/HopsonCommunity/GraphicsInterface)
+* [Agile Board](https://trello.com/b/nWrHTtkw/graphicsinterface)
+* [Issue Tracker](https://github.com/HopsonCommunity/GraphicsInterface/issues)
 
-### Sounds
+### Story Editor
 
-- Played when entering a room
-- Played when selecting an options or cliking a button
+* [Git Repository](https://github.com/HopsonCommunity/TextAdventureEditor)
+* [Agile Board](https://trello.com/b/rb2aTrnY/textadventureeditor)
+* [Issue Tracker](https://github.com/HopsonCommunity/TextAdventureEditor/issues)
 
-### Art
+### Misc Tools
 
-#### Ressources
+* [Binary Files Storage]()
+* [Discord Online Chat](https://discord.gg/F6WF7Dm)
 
-- http://games.gameshed.com/westerando_big.jpg
-- https://www.python.org/dev/peps/pep-0008/
-- https://opengameart.org/content/cowboy-with-rifle
-- https://opengameart.org/content/cowboy-with-revolver
-- https://opengameart.org/content/cowboy
-- https://gamejolt.com/games/fistful-of-gun/16749
-- https://opengameart.org/content/cowboy-game-sprites
+## See also:
 
-### Story
-
-- Load archives
-- Handle choices & transisiton of states
-
-### Stats
-
-- Soumy / leading
-- Methods for updating the personality. i.e. `stats["moral"] += 10` as `incr_moral(10)`
+* [Contirbution Guidelines & Contributor Info](docs/CONTRIBUTING.md)
+* [Engine Explained](docs/EXPLAINED.md)

@@ -1,0 +1,127 @@
+config = {
+    "name" : "Dungeon Quest Extreme V2",
+    "description" : "A quest through all of space and time.",
+
+    "starting_scene" : "entrance",  // the entry point of the story.
+
+                                    // parent folders for various config files.
+    "items"  : "story/items/",      // check "items = " below.
+    "stats"  : "story/stats/",      // check "stats = " below.
+    "assets" : "story/assets/",     // check "assets = " below.
+    "scenes" : "story/scenes/",     // check "scenes = " below.
+
+                                    // meta data about author.
+    "meta" : {  
+        "author" : "Jack",
+        "url" : "rms.org",
+        "email" : "nou@oboforty.com"
+    }
+}
+
+
+
+items = {
+    "bronze_key_1" : { // item id and basic meta data.
+        "name" : "Bronze Key",
+        "description" : "A bronze key."
+    },
+
+    "red_key_1" : {
+        "name" : "Red Key",
+        "description" : "A red key with a firey pattern."
+    }    
+}
+
+
+
+stats = {
+    "traits" : { // stats and abilities you can obtain or change depending on the choices you make.
+        "morality" : {
+            "name" : "Morality",
+            "description" : "Not being a dick."
+        },
+
+        "kindness" : {
+            "name" : "Kindness",
+            "description" : "Being not a dick."
+        },
+
+        "power_of_zeus" : {
+            "name" : "Zeus himself",
+            "description" : "Shoot shit with lightning."
+        }
+    },
+
+    "classes" : { // default classes.
+        "murderer" : {
+            "morality" : -100,
+            "kindness" : -100,
+            "power_of_zeus" : 3
+        },
+
+        "archer" : {
+            "morality" : 10,
+            "kindness" : 5,
+            "power_of_zeus" : 666
+        }
+    }
+}
+
+
+assets = {
+    "dungeon_ambiance" : {
+        "music"   : "wonderwall.wav",    // music to play when scene is active.
+        "bg"      : "dungeon_wall.jpg",  // background picture to show.
+        "sprites" : [
+            {
+                "file" : "ciaran.jpg",   // the file to load.
+                "position" : [200, 400], // where on screen to position the sprite.
+                "size" : 1               // size multiplier. 1 = same as file
+            },
+
+            {
+                "file" : "god.jpg",      // the file to load.
+                "position" : [700, 400], // where on screen to position the sprite.
+                "size" : 2               // size multiplier. 1 = same as file
+            },
+        ]
+    }
+}
+
+
+scenes = {
+    "entrance" : {
+        "title" : "The Dungeon",                       // human readable name
+        "description" : "Welcome to hell, you swine.", // description of your surroundings, exposition.
+
+        "assets" : "dungeon_ambiance",                 // if assets are the same as last scene, 
+                                                       // dont reload anything, just reuse and continue music etc
+
+        "end" : false,                                 // is this scene an endstate?
+
+        "gotos" : [
+            {
+                "label" : "Pick up bronze key.",       // human readable form.
+                "scene" : "entrance",                  // loop back to the same room.
+      
+                "stats" : {                            // stat alterations made by picking this option.
+                    "morality" : 10,                   // add ten morality.
+                    "kindness" : -5,                   // remove 5 kindness.
+                    "power_of_zeus" : 200              // give you some ass kicking power.
+                },      
+      
+                "history" : {                          // variables to keep track of during gameplay.
+                    "knows_jack" : true                // the player has encountered the npc called jack previously.
+                },      
+      
+                "acquire" : {                          // allow the user to pick up the key.
+                    "bronze_key_1" : 1                 // pick up one key.
+                },
+
+                "require" : {                          // if the user has this item, hide this option from the list.
+                    "bronze_key_1" : 0                 // requires 0 of these items, e.g: you have to have none.
+                }
+            }
+        ]
+    }
+}
