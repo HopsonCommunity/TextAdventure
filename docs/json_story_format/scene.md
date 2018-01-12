@@ -75,8 +75,8 @@ Scene is a single JSON object that fully describes single scene a.k.a. state.
         },
 
         {
-            "label": "Leave the Mine",
-            "scene": "mine_entrance",
+            "label": "Give up and go back to the village",
+            "scene": "village",
 
             "required": {
                 "stats": {
