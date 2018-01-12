@@ -70,6 +70,17 @@ Scene is a single JSON object that fully describes single scene a.k.a. state.
                     "torch": 1
                 }
             }
+        },
+
+        {
+            "label": "Leave the Mine",
+            "scene": "mine_entrance",
+
+            "required": {
+                "stats": {
+                    "cowardice": 10
+                }
+            }
         }
     ]
 }
@@ -96,3 +107,5 @@ After picking an goto player can acquire:
 `history` - overrides a previous value or creates a new field  
 `items` - adds supplied number to number of owned items 
 `stats` - adds suplied number to statistic
+
+If the stats used is an antonym, it means to be inferior or equal of the stat. i.e. `"cowardice" : 10` means `courage <= 10`.
