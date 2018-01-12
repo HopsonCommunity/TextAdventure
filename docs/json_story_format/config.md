@@ -1,6 +1,9 @@
 # Config
+
 A config file is a main file of a story. It configures engine behaviour and links all other files. Inside a file there should be an JSON object with following fields:
+
 ## Misc
+
 ```json
 "misc": {
     "name": "THE Wild West",
@@ -9,9 +12,11 @@ A config file is a main file of a story. It configures engine behaviour and link
     "starting_scene": "train_station"
 }
 ```
+
 `starting_scene` - first scene of the game. Player will appear there
 
 ## Meta
+
 ```json
 "meta": {
     "author" : "me",
@@ -21,6 +26,7 @@ A config file is a main file of a story. It configures engine behaviour and link
 ```
 
 ## Links
+
 ```json
 "ressources": {
     "items": "./items/",
@@ -30,4 +36,5 @@ A config file is a main file of a story. It configures engine behaviour and link
     "stats": "./stats.json"
 }
 ```
+
 Links directories containing appropriate files

@@ -1,7 +1,9 @@
 # Items
+
 This type of file contains json objects which describe items
 
 ## Example
+
 ```json
     "revolver" : {
         "name" : "Colt Walker Revolver",

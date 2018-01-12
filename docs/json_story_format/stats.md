@@ -1,6 +1,9 @@
 # Stats
+
 Stats file describes all the player traits and classes. Inside there are two fields: `traits`, `classes`
+
 ## Traits
+
 ```json
 "traits": {
     "shooting": {
@@ -20,6 +23,7 @@ Each trait is an integer which can be changed after taking a specific action. Th
 Opposite are used in conditionals (cf [scene conditional](./scene.md)).
 
 ## Classes
+
 ```json
 "classes": {
     "revolver-man": {
