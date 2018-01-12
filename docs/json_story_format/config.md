@@ -22,7 +22,7 @@ A config file is a main file of a story. It configures engine behaviour and link
 
 ## Links
 ```json
-"links": {
+"ressources": {
     "items": "./items/",
     "assets": "./assets/",
     "scenes": "./scenes/",
