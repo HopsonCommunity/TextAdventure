@@ -1,7 +1,7 @@
 # JSON story format
 
 Story format is a way to describe the story to the engine.
-A few files are needed and most of them can be splitted up into multiple ones apart from config and stats file.
+A few files are needed and most of them can be split up into multiple ones apart from config and stats file.
 Example:
 
 ```
@@ -23,7 +23,6 @@ Example:
     stats.json
 ```
 
-If there is more than one layer of folders, folder names will be added before a name which is used to access it, for example: `mine_big_room`
 All files are written in json format
 
 ### [Config](./config.md)
