@@ -7,7 +7,7 @@ Scene is a single JSON object that fully describes single scene a.k.a. state.
 ```json
 "mine_entrance": {
     "name": "Mine entrance",
-    "description": "You see a big mine entrance with wooden supports. There is a torch lyng on a ground",
+    "description": "You see a big mine entrance with wooden supports. There is a torch lying on a ground",
     "assets": "mine_entrance",
     "end": false,
 
