@@ -6,14 +6,16 @@ A config file is a main file of a story. It configures engine behaviour and link
 
 ```json
 "misc": {
-    "name": "THE Wild West",
+    "name": "The Wild West",
     "description": "A game about the story of a man who left everything to find an adventure",
+    "version": "1.2.1",
 
     "starting_scene": "train_station"
 }
 ```
 
 `starting_scene` - first scene of the game. Player will appear there
+`version` - used in player save fileé
 
 ## Meta
 
