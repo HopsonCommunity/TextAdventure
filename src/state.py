@@ -1,0 +1,55 @@
+""" State class file """
+
+class State(object):
+    """ Describe a State """
+
+    @staticmethod
+    def load_from_json(json_content):
+        """Return a State object load from the json"""
+        pass
+
+    def __init__(self, title, description, is_end):
+        pass
+
+    def set_music(self, music):
+        """Set the music state to 'music'"""
+        pass
+
+    def set_background(self, background):
+        """Set the background state to 'background'"""
+        pass
+
+    def add_sprite(self, sprite, position_x, position_y, scale):
+        """Add a new sprite 'sprite' to the state at position and scale specified"""
+        pass
+
+    def add_option(self, label, next_state, required, acquired):
+        """Add an option, required and acquired are a dictonary with key 'items', 'history', 'stats'
+        Each of them are a dictionary name to value"""
+        pass
+
+    def get_title(self):
+        """Return the title"""
+        pass
+
+    def get_description(self):
+        """Return the description"""
+        pass
+
+    def get_assets(self):
+        """Return the assets used.
+        This is a dictionary with key "music", "background", and "sprites".
+        The last one is an array of sprite, position and scale"""
+        pass
+
+    def is_end(self):
+        """Return true if it's an end state, false otherwise"""
+        pass
+
+    def get_option_count(self):
+        """Return the nuber of option in this state"""
+        pass
+
+    def get_option(self, index):
+        """Return the option at 'index'"""
+        pass
