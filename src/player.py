@@ -6,14 +6,9 @@ class Player(object):
     def __init__(self, state):
         pass
 
-    @staticmethod
-    def load_from(content):
-        """Return a Player object load from the save file"""
-        pass
-
     def save_to(self, filename):
         """Save the inventory, state, stats and history of the player to the file.
-        Can be loaded with 'Player.load_from' later"""
+        Can be loaded with 'load_player_from' later"""
         pass
 
     def set_state(self, state):
@@ -51,3 +46,7 @@ class Player(object):
     def has_history(self, name):
         """Return true if the history 'name' has been previously set"""
         pass
+
+def load_player_from(content):
+    """Return a Player object load from the save file"""
+    pass
