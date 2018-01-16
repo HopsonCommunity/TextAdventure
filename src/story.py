@@ -11,9 +11,9 @@ class Story(object):
         pass
 
     def __init__(self):
-        self.reset_story()
+        self.__reset()
 
-    def reset_story(self):
+    def __reset(self):
         """Clean up the structure"""
         pass
 
