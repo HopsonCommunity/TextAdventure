@@ -4,7 +4,7 @@ class Player(object):
     """Describe the player, his inventory, traits, position and history"""
 
     def __init__(self, state):
-        pass
+        self.history = {}
 
     def save_to(self, filename):
         """Save the inventory, state, stats and history of the player to the file.
@@ -41,11 +41,11 @@ class Player(object):
 
     def set_history(self, name, value):
         """Set the history 'name' to 'value', it must be a boolean"""
-        pass
+        self.history[name] = value
 
     def has_history(self, name):
         """Return true if the history 'name' has been previously set"""
-        pass
+        return self.history.get(name, False)
 
 def load_player_from(content):
     """Return a Player object load from the save file"""
