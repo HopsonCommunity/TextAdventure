@@ -30,9 +30,7 @@ class Player(object):
     def change_items(self, items):
         """Add all items in 'items' (dictionary name to value) in the player's inventory"""
         for item, count in items.items():
-            self.items[item] = self.items.get(item, 0) + count
-            if self.items[item] < 0:
-                self.items[item] = 0
+            self.items[item] = max(self.items.get(item, 0) + count, 0)
 
     def has_items(self, items):
         """Return true if the player has all items in 'items' (dictionary name to value)"""
