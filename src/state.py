@@ -3,11 +3,6 @@
 class State(object):
     """ Describe a State """
 
-    @staticmethod
-    def load_from_json(json_content):
-        """Return a State object load from the json"""
-        pass
-
     def __init__(self, title, description, is_end):
         pass
 
@@ -53,3 +48,7 @@ class State(object):
     def get_option(self, index):
         """Return the option at 'index'"""
         pass
+
+def load_state_from_json(json_content):
+    """Return a State object load from the json"""
+    pass
