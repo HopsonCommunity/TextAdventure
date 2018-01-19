@@ -25,13 +25,13 @@ class Player(object):
         for trait, value in traits.items():
             self.traits[trait] = value
 
-    def change_traits(self, traits):
-        """Add 'value' to 'trait'"""
+    def update_traits(self, traits):
+        """Update the players traits to reflect the parameter traits. (Adds to the previous value)"""
         for trait, value in traits.items():
             self.traits[trait] = self.traits.get(trait, 0) + value
 
     def has_traits(self, traits):
-        """Return true if the player has all traits in 'traits' (dictionary name to value)"""
+        """Return true if the player has all traits in parameter traits (equal or more)"""
         for trait, value in traits.items():
             if self.traits.get(trait, 0) < value:
                 return False
