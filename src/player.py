@@ -27,13 +27,13 @@ class Player(object):
         """Add 'value' to 'trait'"""
         pass
 
-    def change_items(self, items):
-        """Add all items in 'items' (dictionary name to value) in the player's inventory"""
+    def update_items(self, items: dict):
+        """Update the players inventory to reflect the parameter items. (Adds to the previous value)"""
         for item, count in items.items():
-            self.items[item] = max(self.items.get(item, 0) + count, 0)
+            self.items[item] = max(self.items.get(item, 0) + count, 0)  # clamps value to zero if result is negative
 
-    def has_items(self, items):
-        """Return true if the player has all items in 'items' (dictionary name to value)"""
+    def has_items(self, items: dict):
+        """Return true if the player has at least number of items specified in parameter items"""
         for item, count in items.items():
             if self.items.get(item, 0) < count:
                 return False
