@@ -3,8 +3,8 @@
 class Player(object):
     """Describe the player, his inventory, traits, position and history"""
 
-    def __init__(self, state):
-        pass
+    def __init__(self, state=None):
+        self.state = state
 
     def save_to(self, filename):
         """Save the inventory, state, stats and history of the player to the file.
@@ -13,11 +13,11 @@ class Player(object):
 
     def set_state(self, state):
         """Set the player's position to 'state'"""
-        pass
+        self.state = state
 
     def get_state(self):
         """Return the current player's state"""
-        pass
+        return self.state
 
     def set_trait(self, name, value):
         """Set the trait to 'value'"""
