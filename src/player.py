@@ -3,8 +3,8 @@
 class Player(object):
     """Describe the player, his inventory, traits, position and history"""
 
-    def __init__(self, state):
-        self.state = None
+    def __init__(self, state=None):
+        self.state = state
 
     def save_to(self, filename):
         """Save the inventory, state, stats and history of the player to the file.
