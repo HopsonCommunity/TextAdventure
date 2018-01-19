@@ -5,6 +5,7 @@ class Player(object):
 
     def __init__(self, state=None):
         self.state = state
+        self.items = {}
 
     def save_to(self, filename):
         """Save the inventory, state, stats and history of the player to the file.
@@ -27,17 +28,17 @@ class Player(object):
         """Add 'value' to 'trait'"""
         pass
 
-    def add_items(self, items):
-        """Add all items in 'items' (dictionary name to value) in the player's inventory"""
-        pass
+    def update_items(self, items: dict):
+        """Update the players inventory to reflect the parameter items. (Adds to the previous value)"""
+        for item, count in items.items():
+            self.items[item] = max(self.items.get(item, 0) + count, 0)  # clamps value to zero if result is negative
 
-    def has_items(self, items):
-        """Return true if the player has all items in 'items' (dictionary name to value)"""
-        pass
-
-    def remove_items(self, items):
-        """Remove all items of 'items' (dictionary name to value)"""
-        pass
+    def has_items(self, items: dict):
+        """Return true if the player has at least number of items specified in parameter items"""
+        for item, count in items.items():
+            if self.items.get(item, 0) < count:
+                return False
+        return True
 
     def set_history(self, name, value):
         """Set the history 'name' to 'value', it must be a boolean"""
