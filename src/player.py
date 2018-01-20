@@ -6,6 +6,7 @@ class Player(object):
     def __init__(self, state=None):
         self.state = state
         self.items = {}
+        self.traits = {}
 
     def save_to(self, filename):
         """Save the inventory, state, stats and history of the player to the file.
@@ -20,13 +21,22 @@ class Player(object):
         """Return the current player's state"""
         return self.state
 
-    def set_trait(self, name, value):
-        """Set the trait to 'value'"""
-        pass
+    def set_traits(self, traits):
+        """Set all traits in `traits` (dictionary name to value)"""
+        for trait, value in traits.items():
+            self.traits[trait] = value
 
-    def add_to_trait(self, name, value):
-        """Add 'value' to 'trait'"""
-        pass
+    def update_traits(self, traits):
+        """Update the players traits to reflect the parameter traits. (Adds to the previous value)"""
+        for trait, value in traits.items():
+            self.traits[trait] = self.traits.get(trait, 0) + value
+
+    def has_traits(self, traits):
+        """Return true if the player has all traits in parameter traits (equal or more)"""
+        for trait, value in traits.items():
+            if self.traits.get(trait, 0) < value:
+                return False
+            return True
 
     def update_items(self, items: dict):
         """Update the players inventory to reflect the parameter items. (Adds to the previous value)"""
