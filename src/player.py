@@ -7,6 +7,7 @@ class Player(object):
         self.state = state
         self.items = {}
         self.traits = {}
+        self.history = {}
 
     def save_to(self, filename):
         """Save the inventory, state, stats and history of the player to the file.
@@ -50,13 +51,17 @@ class Player(object):
                 return False
         return True
 
-    def set_history(self, name, value):
+    def set_history(self, history: dict):
         """Set the history 'name' to 'value', it must be a boolean"""
-        pass
+        for story, value in history.items():
+            self.history[story] = value
 
-    def has_history(self, name):
-        """Return true if the history 'name' has been previously set"""
-        pass
+    def has_history(self, history: dict):
+        """Return true if all values in player history and in parameter are equal"""
+        for story, value in history.items():
+            if self.history.get(story, 0) != value:
+                return False
+            return True
 
 def load_player_from(content):
     """Return a Player object load from the save file"""
