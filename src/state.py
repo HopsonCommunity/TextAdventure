@@ -4,22 +4,28 @@ class State(object):
     """ Describe a State """
 
     def __init__(self, title, description, is_end):
-        pass
+        self.assets = {}
 
 
     def set_music(self, music):
         """Set the music state to 'music'"""
-        pass
+        self.assets['music'] = music
 
 
     def set_background(self, background):
         """Set the background state to 'background'"""
-        pass
+        self.assets['background'] = background
 
 
     def add_sprite(self, sprite, position_x, position_y, scale):
         """Add a new sprite 'sprite' to the state at position and scale specified"""
-        pass
+        if 'sprites' not in self.assets:
+            self.assets['sprites'] = []
+        self.assets['sprites'].append({
+            'sprite': sprite,
+            'position': (position_x, position_y),
+            'scale': scale
+        })
 
 
     def add_option(self, label, next_state, required, acquired):
@@ -42,7 +48,7 @@ class State(object):
         """Return the assets used.
         This is a dictionary with key "music", "background", and "sprites".
         The last one is an array of sprite, position and scale"""
-        pass
+        return self.assets.copy()
 
 
     def is_end(self):
