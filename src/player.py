@@ -1,13 +1,15 @@
 """ Player class file """
 
+from collections import defaultdict
+
 class Player(object):
     """Describe the player, his inventory, traits, position and history"""
 
     def __init__(self, state=None):
         self.state = state
-        self.items = {}
-        self.traits = {}
-        self.history = {}
+        self.items = defaultdict(lambda: 0)
+        self.traits = defaultdict(lambda: 0)
+        self.history = defaultdict(lambda: False)
 
 
     def save_to(self, filename):
@@ -35,13 +37,13 @@ class Player(object):
     def update_traits(self, traits):
         """Update the players traits to reflect the parameter traits. (Adds to the previous value)"""
         for trait, value in traits.items():
-            self.traits[trait] = self.traits.get(trait, 0) + value
+            self.traits[trait] += value
 
 
     def has_traits(self, traits):
         """Return true if the player has all traits in parameter traits (equal or more)"""
         for trait, value in traits.items():
-            if self.traits.get(trait, 0) < value:
+            if self.traits.get[trait] < value:
                 return False
             return True
 
@@ -49,13 +51,13 @@ class Player(object):
     def update_items(self, items: dict):
         """Update the players inventory to reflect the parameter items. (Adds to the previous value)"""
         for item, count in items.items():
-            self.items[item] = max(self.items.get(item, 0) + count, 0)  # clamps value to zero if result is negative
+            self.items[item] = max(self.items[item] + count, 0)  # clamps value to zero if result is negative
 
 
     def has_items(self, items: dict):
         """Return true if the player has at least number of items specified in parameter items"""
         for item, count in items.items():
-            if self.items.get(item, 0) < count:
+            if self.items[item] < count:
                 return False
         return True
 
@@ -69,7 +71,7 @@ class Player(object):
     def has_history(self, history: dict):
         """Return true if all values in player history and in parameter are equal"""
         for story, value in history.items():
-            if self.history.get(story, 0) != value:
+            if self.history[story] != value:
                 return False
             return True
 
