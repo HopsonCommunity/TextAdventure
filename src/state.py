@@ -5,6 +5,7 @@ class State(object):
 
     def __init__(self, title, description, is_end):
         self.assets = {}
+        self.options = []
 
 
     def set_music(self, music):
@@ -31,7 +32,13 @@ class State(object):
     def add_option(self, label, next_state, required, acquired):
         """Add an option, required and acquired are a dictonary with key 'items', 'history', 'stats'
         Each of them are a dictionary name to value"""
-        pass
+        option = {
+            'label' : label,
+            'next_state' : next_state,
+            'required' : required,
+            'acquired' : acquired
+        }
+        self.options.append(option)
 
 
     def get_title(self):
@@ -58,12 +65,12 @@ class State(object):
 
     def get_option_count(self):
         """Return the nuber of option in this state"""
-        pass
+        return self.options.count()
 
 
     def get_option(self, index):
         """Return the option at 'index'"""
-        pass
+        return self.options[index]
 
 
 def load_state_from_json(json_content):
