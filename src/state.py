@@ -4,7 +4,7 @@ class State(object):
     """ Describe a State """
 
     def __init__(self, title, description, is_end):
-        self.assets = {}
+        self.assets = {'sprites' : []}
 
 
     def set_music(self, music):
@@ -19,8 +19,6 @@ class State(object):
 
     def add_sprite(self, sprite, position_x, position_y, scale):
         """Add a new sprite 'sprite' to the state at position and scale specified"""
-        if 'sprites' not in self.assets:
-            self.assets['sprites'] = []
         self.assets['sprites'].append({
             'sprite': sprite,
             'position': (position_x, position_y),
