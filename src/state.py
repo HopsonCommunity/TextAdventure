@@ -5,6 +5,9 @@ class State(object):
 
     def __init__(self, title, description, is_end):
         self.assets = {}
+        self.title = title
+        self.description = description
+        self.end = is_end
 
 
     def set_music(self, music):
@@ -36,12 +39,12 @@ class State(object):
 
     def get_title(self):
         """Return the title"""
-        pass
+        return self.title
 
 
     def get_description(self):
         """Return the description"""
-        pass
+        return self.description
 
 
     def get_assets(self):
@@ -53,7 +56,7 @@ class State(object):
 
     def is_end(self):
         """Return true if it's an end state, false otherwise"""
-        pass
+        return self.end
 
 
     def get_option_count(self):
