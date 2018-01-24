@@ -42,9 +42,9 @@ class Player(object):
 
     def has_traits(self, traits):
         """Return true if the player has all traits in parameter traits (equal or more)"""
-        return all([
+        return all(
             self.traits.get(trait, 0) > value 
-            for trait, value in traits.items()])
+            for trait, value in traits.items())
 
 
     def update_items(self, items: dict):
@@ -55,9 +55,9 @@ class Player(object):
 
     def has_items(self, items: dict):
         """Return true if the player has at least number of items specified in parameter items"""
-        return all([
+        return all(
             self.items.get(item, 0) > count 
-            for item, count in items.items()])
+            for item, count in items.items())
 
 
     def set_history(self, history: dict):
@@ -68,9 +68,9 @@ class Player(object):
 
     def has_history(self, history: dict):
         """Return true if all values in player history and in parameter are equal"""
-        return all([
+        return all(
             self.history.get(story, False) == value 
-            for story, value in history.items()])
+            for story, value in history.items())
 
 
 def load_player_from(content):
