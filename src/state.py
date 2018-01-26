@@ -63,14 +63,9 @@ class State(object):
         pass
 
 
-    def get_option_count(self):
-        """Return the nuber of option in this state"""
-        return self.options.count()
-
-
-    def get_option(self, index):
+    def get_options(self):
         """Return the option at 'index'"""
-        return self.options[index]
+        return self.options.copy()
 
 
 def load_state_from_json(json_content):
