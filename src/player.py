@@ -1,6 +1,7 @@
 """ Player class file """
 
 from collections import defaultdict
+from state import State
 
 class Player(object):
     """Describe the player, his inventory, traits, position and history"""
@@ -12,13 +13,13 @@ class Player(object):
         self.history = defaultdict(lambda: False)
 
 
-    def save_to(self, filename):
+    def save_to(self, filename: str):
         """Save the inventory, state, stats and history of the player to the file.
         Can be loaded with 'load_player_from' later"""
         pass
 
 
-    def set_state(self, state):
+    def set_state(self, state: State):
         """Set the player's position to 'state'"""
         self.state = state
 
@@ -28,19 +29,19 @@ class Player(object):
         return self.state
 
 
-    def set_traits(self, traits):
+    def set_traits(self, traits: dict):
         """Set all traits in `traits` (dictionary name to value)"""
         for trait, value in traits.items():
             self.traits[trait] = value
 
 
-    def update_traits(self, traits):
+    def update_traits(self, traits: dict):
         """Update the players traits to reflect the parameter traits. (Adds to the previous value)"""
         for trait, value in traits.items():
             self.traits[trait] += value
 
 
-    def has_traits(self, traits):
+    def has_traits(self, traits: dict):
         """Return true if the player has all traits in parameter traits (equal or more)"""
         return all(
             self.traits.get(trait, 0) > value 
