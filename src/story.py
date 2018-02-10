@@ -8,7 +8,7 @@ class Story(object):
     def __init__(self):
         self.items = {}
         self.traits = {}
-        self.classes = {}
+        self.roles = {}
         self.states = {}
         self.antonyms = {}
 
@@ -25,9 +25,9 @@ class Story(object):
             self.antonyms[antonym] = name
 
 
-    def add_class(self, class_name, trait_value_dict):
+    def add_role(self, role_name, trait_value_dict):
         """Add a class, trait_value_dict is a dictionary 'trait' to 'value'"""
-        self.classes[class_name] = {'traits': trait_value_dict}
+        self.roles[role_name] = {'traits': trait_value_dict}
 
 
     def add_state(self, name, state):
