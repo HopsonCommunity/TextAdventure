@@ -1,9 +1,11 @@
 """ State class file """
 
+import json
+
 class State(object):
     """ Describe a State """
 
-    def __init__(self, title, description, is_end):
+    def __init__(self, title: str, description: str, is_end: bool):
         self.assets = {}
         self.options = []
         self.title = title
@@ -11,17 +13,17 @@ class State(object):
         self.end = is_end
 
 
-    def set_music(self, music):
+    def set_music(self, music: str):
         """Set the music state to 'music'"""
         self.assets['music'] = music
 
 
-    def set_background(self, background):
+    def set_background(self, background: str):
         """Set the background state to 'background'"""
         self.assets['background'] = background
 
 
-    def add_sprite(self, sprite, position_x, position_y, scale):
+    def add_sprite(self, sprite: str, position_x: int, position_y: int, scale: int):
         """Add a new sprite 'sprite' to the state at position and scale specified"""
         if 'sprites' not in self.assets:
             self.assets['sprites'] = []
@@ -32,7 +34,7 @@ class State(object):
         })
 
 
-    def add_option(self, label, next_state, required, acquired):
+    def add_option(self, label: str, next_state: 'State', required: dict, acquired: dict):
         """Add an option, required and acquired are a dictonary with key 'items', 'history', 'stats'
         Each of them are a dictionary name to value"""
         option = {
@@ -71,6 +73,6 @@ class State(object):
         return self.options.copy()
 
 
-def load_state_from_json(json_content):
+def load_state_from_json(json_content: json):
     """Return a State object load from the json"""
     pass
