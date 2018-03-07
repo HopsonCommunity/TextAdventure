@@ -2,6 +2,7 @@
 
 from collections import defaultdict
 from state import State
+from typing import Dict
 
 class Player(object):
     """Describe the player, his inventory, traits, position and history"""
@@ -19,29 +20,29 @@ class Player(object):
         pass
 
 
-    def set_state(self, state: State):
+    def set_state(self, state: str):
         """Set the player's position to 'state'"""
         self.state = state
 
 
-    def get_state(self):
+    def get_state(self) -> str:
         """Return the current player's state"""
         return self.state
 
 
-    def set_traits(self, traits: dict):
+    def set_traits(self, traits: Dict[str, int]):
         """Set all traits in `traits` (dictionary name to value)"""
         for trait, value in traits.items():
             self.traits[trait] = value
 
 
-    def update_traits(self, traits: dict):
+    def update_traits(self, traits: Dict[str, int]):
         """Update the players traits to reflect the parameter traits. (Adds to the previous value)"""
         for trait, value in traits.items():
             self.traits[trait] += value
 
 
-    def has_traits(self, traits: dict):
+    def has_traits(self, traits: Dict[str, int]) -> bool:
         """Return true if the player has all traits in parameter traits (equal or more)"""
         return all(
             self.traits.get(trait, 0) > value 
@@ -54,7 +55,7 @@ class Player(object):
             self.items[item] = max(self.items[item] + count, 0)  # clamps value to zero if result is negative
 
 
-    def has_items(self, items: dict):
+    def has_items(self, items: dict) -> bool:
         """Return true if the player has at least number of items specified in parameter items"""
         return all(
             self.items.get(item, 0) > count 
@@ -67,7 +68,7 @@ class Player(object):
             self.history[story] = value
 
 
-    def has_history(self, history: dict):
+    def has_history(self, history: dict) -> bool:
         """Return true if all values in player history and in parameter are equal"""
         return all(
             self.history.get(story, False) == value 

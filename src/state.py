@@ -1,6 +1,7 @@
 """ State class file """
 
 import json
+from typing import Dict
 
 class State(object):
     """ Describe a State """
@@ -34,7 +35,7 @@ class State(object):
         })
 
 
-    def add_option(self, label: str, next_state: 'State', required: dict, acquired: dict):
+    def add_option(self, label: str, next_state: str, required: Dict[str, dict], acquired: Dict[str, dict]):
         """Add an option, required and acquired are a dictonary with key 'items', 'history', 'stats'
         Each of them are a dictionary name to value"""
         option = {
@@ -46,33 +47,33 @@ class State(object):
         self.options.append(option)
 
 
-    def get_title(self):
+    def get_title(self) -> str:
         """Return the title"""
         return self.title
 
 
-    def get_description(self):
+    def get_description(self) -> str:
         """Return the description"""
         return self.description
 
 
-    def get_assets(self):
+    def get_assets(self) -> dict:
         """Return the assets used.
         This is a dictionary with key "music", "background", and "sprites".
         The last one is an array of sprite, position and scale"""
         return self.assets.copy()
 
 
-    def is_end(self):
+    def is_end(self) -> bool:
         """Return true if it's an end state, false otherwise"""
         return self.end
 
 
-    def get_options(self):
+    def get_options(self) -> dict:
         """Return the option at 'index'"""
         return self.options.copy()
 
 
-def load_state_from_json(json_content: json):
+def load_state_from_json(json_content: json) -> State:
     """Return a State object load from the json"""
     pass
